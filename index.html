@@ -1,14 +1,750 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Not Found</title>
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
-  </head>
-  <body>
-    <h1>Page Not Found</h1>
-    <p>The requested page was not found.</p>
-  </body>
-</html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SCORE LLC — Digital Growth, Design & Development</title>
+<meta name="description" content="SCORE LLC is a digital studio for social media growth, creative design, video production, web development, and AI integration.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ BASE ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
+:root{
+  --bg:#05060a;
+  --panel:#080a11;
+  --border:rgba(255,255,255,.08);
+  --border-strong:rgba(255,255,255,.18);
+  --text:#eaecf2;
+  --muted:#8b93a7;
+  --c1:#22d3ee;
+  --c2:#7c3aed;
+  --c3:#f472b6;
+  --radius:22px;
+  --max:1200px;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* film grain */
+body::after{
+  content:"";
+  position:fixed;inset:0;
+  pointer-events:none;z-index:9999;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;line-height:1.08;letter-spacing:-.03em;font-weight:600}
+
+a{color:inherit;text-decoration:none}
+img,svg{display:block}
+::selection{background:rgba(124,58,237,.5);color:#fff}
+
+.container{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+/* ============ BUTTONS ============ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  padding:.9rem 1.6rem;border-radius:999px;
+  font-size:.94rem;font-weight:500;font-family:'Inter',sans-serif;
+  border:1px solid transparent;cursor:pointer;
+  transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s,background .35s,border-color .35s;
+  white-space:nowrap;
+}
+.btn-primary{
+  background:linear-gradient(120deg,var(--c1),var(--c2) 55%,var(--c3));
+  background-size:200% 100%;
+  color:#fff;
+  box-shadow:0 12px 40px -14px rgba(124,58,237,.9);
+}
+.btn-primary:hover{
+  transform:translateY(-3px);
+  background-position:100% 0;
+  box-shadow:0 22px 55px -14px rgba(124,58,237,1);
+}
+.btn-ghost{
+  border-color:var(--border);
+  background:rgba(255,255,255,.03);
+  backdrop-filter:blur(12px);
+  color:var(--text);
+}
+.btn-ghost:hover{
+  border-color:var(--border-strong);
+  background:rgba(255,255,255,.07);
+  transform:translateY(-3px);
+}
+.btn-sm{padding:.62rem 1.15rem;font-size:.86rem}
+
+/* ============ NAV ============ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px 0;
+  transition:padding .4s ease,background .4s ease,backdrop-filter .4s ease,border-color .4s ease;
+  border-bottom:1px solid transparent;
+}
+.nav.scrolled{
+  padding:11px 0;
+  background:rgba(5,6,10,.72);
+  backdrop-filter:blur(18px) saturate(160%);
+  border-bottom-color:var(--border);
+}
+.nav-inner{
+  max-width:var(--max);margin:0 auto;padding:0 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+.logo{display:flex;align-items:center;gap:11px;font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.02em}
+.logo-mark{
+  width:34px;height:34px;border-radius:10px;
+  display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--c1),var(--c2) 60%,var(--c3));
+  color:#fff;font-size:1.05rem;font-weight:700;
+  box-shadow:0 6px 22px -8px rgba(124,58,237,.9);
+}
+.logo-text{font-size:1.02rem;letter-spacing:.02em}
+.logo-text span{color:var(--muted);font-weight:500;margin-left:5px;font-size:.78rem;letter-spacing:.14em}
+
+.nav-links{display:flex;gap:34px}
+.nav-links a{
+  font-size:.9rem;color:var(--muted);font-weight:450;
+  position:relative;transition:color .3s;
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:-6px;height:1px;width:0;
+  background:linear-gradient(90deg,var(--c1),var(--c3));
+  transition:width .35s cubic-bezier(.16,1,.3,1);
+}
+.nav-links a:hover{color:var(--text)}
+.nav-links a:hover::after{width:100%}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;align-items:center;
+  padding:150px 0 90px;
+  overflow:hidden;
+  isolation:isolate;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background-image:
+    linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(ellipse 90% 65% at 50% 25%,#000 0%,transparent 78%);
+  mask-image:radial-gradient(ellipse 90% 65% at 50% 25%,#000 0%,transparent 78%);
+}
+.aurora{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.blob{position:absolute;border-radius:50%;filter:blur(110px);opacity:.42}
+.blob.b1{width:560px;height:560px;background:#2563eb;top:-190px;left:-140px;animation:drift1 20s ease-in-out infinite}
+.blob.b2{width:480px;height:480px;background:#7c3aed;top:60px;right:-140px;animation:drift2 24s ease-in-out infinite}
+.blob.b3{width:420px;height:420px;background:#06b6d4;bottom:-220px;left:38%;opacity:.3;animation:drift3 28s ease-in-out infinite}
+
+@keyframes drift1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(90px,70px) scale(1.12)}}
+@keyframes drift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-80px,60px) scale(1.15)}}
+@keyframes drift3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(60px,-70px) scale(1.1)}}
+
+.hero-inner{max-width:var(--max);margin:0 auto;padding:0 24px;width:100%;position:relative}
+
+.badge{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:.42rem .95rem .42rem .6rem;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:rgba(255,255,255,.035);
+  backdrop-filter:blur(12px);
+  font-size:.8rem;color:#c3cad9;letter-spacing:.01em;
+  margin-bottom:30px;
+}
+.dot{
+  width:7px;height:7px;border-radius:50%;
+  background:#34d399;
+  box-shadow:0 0 0 0 rgba(52,211,153,.6);
+  animation:pulse 2.4s infinite;
+}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(52,211,153,.55)}
+  70%{box-shadow:0 0 0 9px rgba(52,211,153,0)}
+  100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}
+}
+
+.hero h1{
+  font-size:clamp(2.6rem,7.2vw,5.4rem);
+  max-width:16ch;
+  margin-bottom:26px;
+}
+.grad{
+  background:linear-gradient(100deg,#22d3ee 0%,#a78bfa 42%,#f472b6 78%,#22d3ee 100%);
+  background-size:220% 100%;
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent;
+  animation:shift 9s linear infinite;
+}
+@keyframes shift{to{background-position:220% 0}}
+
+.lede{
+  font-size:clamp(1rem,1.35vw,1.16rem);
+  color:var(--muted);
+  max-width:56ch;
+  margin-bottom:40px;
+}
+.lede strong{color:#d6dbe6;font-weight:500}
+
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:74px}
+
+.hero-stats{
+  display:flex;flex-wrap:wrap;gap:14px;
+}
+.stat{
+  flex:1 1 180px;
+  padding:20px 22px;
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.012));
+  backdrop-filter:blur(10px);
+  transition:border-color .4s,transform .4s;
+}
+.stat:hover{border-color:var(--border-strong);transform:translateY(-4px)}
+.stat-num{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.65rem;font-weight:600;letter-spacing:-.03em;
+  background:linear-gradient(120deg,#fff,#9aa6c0);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.stat-label{font-size:.79rem;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-top:2px}
+
+/* ============ MARQUEE ============ */
+.marquee{
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:24px 0;
+  overflow:hidden;
+  background:rgba(255,255,255,.012);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+}
+.marquee-track{
+  display:flex;gap:52px;width:max-content;
+  animation:scroll 38s linear infinite;
+}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.marquee-item{
+  display:flex;align-items:center;gap:52px;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1rem;color:#6b7488;letter-spacing:.02em;white-space:nowrap;
+}
+.marquee-item::after{
+  content:"";width:5px;height:5px;border-radius:50%;
+  background:linear-gradient(135deg,var(--c1),var(--c3));
+  flex-shrink:0;
+}
+
+/* ============ SECTIONS ============ */
+section{padding:120px 0;position:relative}
+.sec-head{max-width:660px;margin-bottom:64px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--c1);font-weight:500;margin-bottom:18px;
+}
+.eyebrow::before{
+  content:"";width:26px;height:1px;
+  background:linear-gradient(90deg,var(--c1),transparent);
+}
+.sec-head h2{font-size:clamp(2rem,4.2vw,3.2rem);margin-bottom:18px}
+.sec-head p{color:var(--muted);font-size:1.03rem;max-width:52ch}
+
+/* ============ BENTO SERVICES ============ */
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+  position:relative;
+  padding:30px 28px 32px;
+  border-radius:var(--radius);
+  border:1px solid var(--border);
+  background:linear-gradient(180deg,rgba(255,255,255,.048),rgba(255,255,255,.012));
+  overflow:hidden;
+  transition:transform .45s cubic-bezier(.16,1,.3,1),border-color .45s;
+}
+.card::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;
+  opacity:0;transition:opacity .45s;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(124,58,237,.16),transparent 62%);
+  pointer-events:none;
+}
+.card:hover::before{opacity:1}
+.card:hover{transform:translateY(-5px);border-color:var(--border-strong)}
+.card > *{position:relative;z-index:1}
+.span2{grid-column:span 2}
+
+.icon{
+  width:48px;height:48px;border-radius:14px;
+  display:grid;place-items:center;
+  border:1px solid rgba(255,255,255,.1);
+  margin-bottom:22px;
+  transition:transform .45s cubic-bezier(.16,1,.3,1);
+}
+.card:hover .icon{transform:scale(1.08) rotate(-4deg)}
+.icon svg{width:23px;height:23px}
+.i-cyan{background:linear-gradient(135deg,rgba(34,211,238,.18),rgba(34,211,238,.03));color:#67e8f9}
+.i-violet{background:linear-gradient(135deg,rgba(124,58,237,.2),rgba(124,58,237,.03));color:#c4b5fd}
+.i-pink{background:linear-gradient(135deg,rgba(244,114,182,.18),rgba(244,114,182,.03));color:#f9a8d4}
+.i-amber{background:linear-gradient(135deg,rgba(251,191,36,.16),rgba(251,191,36,.03));color:#fcd34d}
+.i-green{background:linear-gradient(135deg,rgba(52,211,153,.16),rgba(52,211,153,.03));color:#6ee7b7}
+.i-blue{background:linear-gradient(135deg,rgba(96,165,250,.18),rgba(96,165,250,.03));color:#93c5fd}
+
+.card h3{font-size:1.18rem;margin-bottom:10px;letter-spacing:-.02em}
+.card p{font-size:.92rem;color:var(--muted);line-height:1.68}
+.card .tag-row{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
+.tag{
+  font-size:.71rem;letter-spacing:.05em;
+  padding:.28rem .65rem;border-radius:999px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.03);
+  color:#98a1b5;
+}
+
+/* ============ APPROACH ============ */
+.approach-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:2px;
+  border-radius:var(--radius);overflow:hidden;
+  border:1px solid var(--border);
+  background:var(--border);
+}
+.step{
+  background:var(--panel);
+  padding:38px 28px 42px;
+  position:relative;
+  transition:background .45s;
+}
+.step:hover{background:#0c0f18}
+.step-num{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:.8rem;letter-spacing:.18em;
+  color:transparent;
+  background:linear-gradient(120deg,var(--c1),var(--c3));
+  -webkit-background-clip:text;background-clip:text;
+  margin-bottom:22px;display:block;
+}
+.step h4{font-size:1.12rem;margin-bottom:10px}
+.step p{font-size:.88rem;color:var(--muted);line-height:1.65}
+.step::after{
+  content:"";position:absolute;left:28px;top:0;height:2px;width:0;
+  background:linear-gradient(90deg,var(--c1),var(--c2));
+  transition:width .6s cubic-bezier(.16,1,.3,1);
+}
+.step:hover::after{width:calc(100% - 56px)}
+
+/* ============ CTA ============ */
+.cta-wrap{padding:0 0 130px}
+.glow-card{
+  position:relative;border-radius:34px;padding:1px;
+  background:linear-gradient(135deg,rgba(34,211,238,.65),rgba(124,58,237,.65) 45%,rgba(244,114,182,.55));
+  box-shadow:0 40px 100px -50px rgba(124,58,237,.9);
+}
+.glow-inner{
+  border-radius:33px;
+  background:radial-gradient(ellipse 90% 130% at 50% 0%,#101223 0%,#07080f 62%);
+  padding:78px 44px;
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+.glow-inner::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:52px 52px;
+  -webkit-mask-image:radial-gradient(ellipse 70% 90% at 50% 0%,#000,transparent 72%);
+  mask-image:radial-gradient(ellipse 70% 90% at 50% 0%,#000,transparent 72%);
+}
+.glow-inner > *{position:relative;z-index:1}
+.glow-inner h2{
+  font-size:clamp(1.9rem,4.4vw,3.3rem);
+  max-width:20ch;margin:0 auto 20px;
+}
+.glow-inner p{
+  color:var(--muted);max-width:50ch;margin:0 auto 38px;font-size:1.02rem;
+}
+.cta-buttons{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+
+/* ============ FOOTER ============ */
+footer{
+  border-top:1px solid var(--border);
+  padding:52px 0 40px;
+  background:rgba(255,255,255,.012);
+}
+.foot-inner{
+  display:flex;flex-wrap:wrap;gap:28px;
+  align-items:center;justify-content:space-between;
+}
+.foot-links{display:flex;flex-wrap:wrap;gap:28px}
+.foot-links a{font-size:.87rem;color:var(--muted);transition:color .3s}
+.foot-links a:hover{color:var(--text)}
+.copy{font-size:.8rem;color:#5b6377}
+
+/* ============ REVEAL ============ */
+.reveal{
+  opacity:0;transform:translateY(26px);
+  transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1);
+  transition-delay:var(--d,0s);
+}
+.reveal.in{opacity:1;transform:none}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:1000px){
+  .approach-grid{grid-template-columns:repeat(2,1fr)}
+  .nav-links{display:none}
+}
+@media (max-width:900px){
+  .bento{grid-template-columns:repeat(2,1fr)}
+  .span2{grid-column:span 2}
+  section{padding:96px 0}
+}
+@media (max-width:640px){
+  .bento{grid-template-columns:1fr}
+  .span2{grid-column:span 1}
+  .approach-grid{grid-template-columns:1fr}
+  .hero{padding-top:130px;min-height:auto}
+  .cta-row{margin-bottom:56px}
+  .cta-row .btn{flex:1 1 100%}
+  .glow-inner{padding:56px 24px}
+  .nav .btn-sm{display:none}
+  .foot-inner{flex-direction:column;align-items:flex-start}
+  section{padding:80px 0}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <span class="logo-mark">S</span>
+      <span class="logo-text">SCORE<span>LLC</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#approach">Approach</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="btn btn-primary btn-sm">Start a project</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="aurora">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
+
+  <div class="hero-inner">
+    <div class="badge reveal"><span class="dot"></span> Available for new projects</div>
+
+    <h1 class="reveal" style="--d:.08s">
+      We make brands <span class="grad">impossible to scroll past.</span>
+    </h1>
+
+    <p class="lede reveal" style="--d:.16s">
+      SCORE LLC is a full-service digital studio. We grow social media audiences, design
+      scroll-stopping content, edit video that converts, build websites and apps people
+      actually enjoy using — and wire <strong>AI into the whole workflow</strong>.
+    </p>
+
+    <div class="cta-row reveal" style="--d:.24s">
+      <a href="#contact" class="btn btn-primary">Book a free strategy call →</a>
+      <a href="#services" class="btn btn-ghost">Explore services</a>
+    </div>
+
+    <div class="hero-stats reveal" style="--d:.32s">
+      <div class="stat">
+        <div class="stat-num">Organic-first</div>
+        <div class="stat-label">Growth strategy</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">Design → Build</div>
+        <div class="stat-label">One studio, full stack</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">AI-powered</div>
+        <div class="stat-label">Smarter workflows</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee">
+  <div class="marquee-track">
+    <div class="marquee-item">
+      <span>Social Media Growth</span><span>Content Creation</span><span>Adobe Suite</span>
+      <span>Video Editing</span><span>Web Development</span><span>App Development</span>
+      <span>Data Tracking</span><span>AI Integration</span>
+    </div>
+    <div class="marquee-item" aria-hidden="true">
+      <span>Social Media Growth</span><span>Content Creation</span><span>Adobe Suite</span>
+      <span>Video Editing</span><span>Web Development</span><span>App Development</span>
+      <span>Data Tracking</span><span>AI Integration</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================= SERVICES ================= -->
+<section id="services">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">What we do</div>
+      <h2>Everything your brand needs, under one roof.</h2>
+      <p>
+        From the first post to the final deploy — strategy, creative, code, and automation
+        built to work together instead of in silos.
+      </p>
+    </div>
+
+    <div class="bento">
+
+      <!-- 1 -->
+      <article class="card span2 reveal">
+        <div class="icon i-cyan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5h-5"/>
+          </svg>
+        </div>
+        <h3>Social Media Growth</h3>
+        <p>
+          Organic-first growth built on real strategy — content pillars, posting cadence,
+          audience targeting, engagement loops, and analytics that tell you what's actually
+          working. No bots, no shortcuts. Just compounding reach.
+        </p>
+        <div class="tag-row">
+          <span class="tag">Organic Growth</span>
+          <span class="tag">Content Strategy</span>
+          <span class="tag">Analytics</span>
+          <span class="tag">Community</span>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="card reveal" style="--d:.06s">
+        <div class="icon i-pink">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/>
+            <path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/>
+          </svg>
+        </div>
+        <h3>Content Creation</h3>
+        <p>
+          Unique, on-brand posts designed to stop the thumb — carousels, statics, reels,
+          stories, and campaign creative tailored to each platform.
+        </p>
+      </article>
+
+      <!-- 3 -->
+      <article class="card reveal">
+        <div class="icon i-violet">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/>
+          </svg>
+        </div>
+        <h3>Adobe Creative Suite</h3>
+        <p>
+          Photoshop, Illustrator, and the wider Adobe toolkit — used to design, retouch,
+          composite, and edit content that looks genuinely premium.
+        </p>
+      </article>
+
+      <!-- 4 -->
+      <article class="card reveal" style="--d:.06s">
+        <div class="icon i-amber">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4.5" width="20" height="15" rx="3"/>
+            <path d="M10 9.5l5 2.5-5 2.5z"/>
+          </svg>
+        </div>
+        <h3>Video Production</h3>
+        <p>
+          Sony Vegas, After Effects, and more — editing, motion graphics, and short-form
+          ads engineered for retention and conversion.
+        </p>
+      </article>
+
+      <!-- 5 -->
+      <article class="card reveal" style="--d:.12s">
+        <div class="icon i-blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 6l-5 6 5 6"/><path d="M16 6l5 6-5 6"/><path d="M13.5 4.5l-3 15"/>
+          </svg>
+        </div>
+        <h3>Web &amp; App Development</h3>
+        <p>
+          Websites, web apps, and local applications with interfaces built around one idea:
+          convenience, efficiency, and function — in that order.
+        </p>
+      </article>
+
+      <!-- 6 -->
+      <article class="card reveal">
+        <div class="icon i-green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 20V12"/><path d="M12 20V4"/><path d="M19 20v-6"/>
+          </svg>
+        </div>
+        <h3>Data &amp; Custom Tools</h3>
+        <p>
+          Tracking dashboards, calculators, internal tools, and bespoke digital solutions
+          shaped around how your business actually operates.
+        </p>
+      </article>
+
+      <!-- 7 -->
+      <article class="card span2 reveal" style="--d:.06s">
+        <div class="icon i-violet">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="7.5" y="7.5" width="9" height="9" rx="2.5"/>
+            <path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.2 5.2l2.1 2.1M16.7 16.7l2.1 2.1M18.8 5.2l-2.1 2.1M7.3 16.7l-2.1 2.1"/>
+          </svg>
+        </div>
+        <h3>AI Integration</h3>
+        <p>
+          We don't just talk about AI — we deploy it. Custom assistants embedded into your
+          website to greet visitors, answer questions, qualify leads, and support customers
+          around the clock. Plus AI woven into your day-to-day workflows to cut busywork and
+          move faster.
+        </p>
+        <div class="tag-row">
+          <span class="tag">AI Chat Assistants</span>
+          <span class="tag">Workflow Automation</span>
+          <span class="tag">Smart Support</span>
+          <span class="tag">Lead Qualification</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= APPROACH ================= -->
+<section id="approach" style="padding-top:0">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">How we work</div>
+      <h2>A simple process. Serious output.</h2>
+      <p>No bloated retainers or vague deliverables — just a clear path from idea to impact.</p>
+    </div>
+
+    <div class="approach-grid reveal">
+      <div class="step">
+        <span class="step-num">01</span>
+        <h4>Discover</h4>
+        <p>We dig into your brand, audience, and goals — then map out where the real opportunities are.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">02</span>
+        <h4>Design</h4>
+        <p>Creative direction, content concepts, and interface design built to look sharp and perform.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">03</span>
+        <h4>Build</h4>
+        <p>Video edits, production-ready assets, and clean code — shipped, tested, and integrated.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">04</span>
+        <h4>Scale</h4>
+        <p>Track the data, refine what works, and layer in automation and AI to keep momentum cheap.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<div class="cta-wrap" id="contact">
+  <div class="container">
+    <div class="glow-card reveal">
+      <div class="glow-inner">
+        <div class="eyebrow" style="justify-content:center">Let's talk</div>
+        <h2>Got an idea? Let's turn it into <span class="grad">something that scores.</span></h2>
+        <p>
+          Tell us what you're trying to grow, fix, or launch. We'll come back with honest
+          recommendations — and a few ideas you probably haven't considered yet.
+        </p>
+        <div class="cta-buttons">
+          <a href="mailto:hello@scorellc.com" class="btn btn-primary">hello@scorellc.com</a>
+          <a href="#services" class="btn btn-ghost">See what we offer</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container foot-inner">
+    <a href="#" class="logo">
+      <span class="logo-mark">S</span>
+      <span class="logo-text">SCORE<span>LLC</span></span>
+    </a>
+    <nav class="foot-links">
+      <a href="#services">Services</a>
+      <a href="#approach">Approach</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="copy">© <span id="year"></span> SCORE LLC. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+/* ---------- Nav scroll state ---------- */
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+onScroll();
+window.addEventListener('scroll', onScroll, { passive: true });
+
+/* ---------- Scroll reveal ---------- */
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+revealEls.forEach((el) => io.observe(el));
+
+/* ---------- Card cursor spotlight ---------- */
+document.querySelectorAll('.card').forEach((card) => {
+  card.addEventListener('pointermove', (e) => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--mx', ((e.clientX - r.left) / r.width) * 100 + '%');
+    card.style.setProperty('--my', ((e.clientY - r.top) / r.height) * 100 + '%');
+  });
+});
+
+/* ---------- Year ---------- */
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
