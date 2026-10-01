@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SCORE LLC — Digital Growth, Design & Development</title>
-<meta name="description" content="SCORE LLC is a digital studio for social media growth, creative design, video production, web development, and AI integration.">
+<title>SCORE LLC — Digital Services, IT & AI Integration</title>
+<meta name="description" content="SCORE LLC is an independent digital services company. Social media growth, content, video, web development, hands-on IT work, and AI integration — all from one place.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -88,6 +88,14 @@ img,svg{display:block}
   transform:translateY(-3px);
 }
 .btn-sm{padding:.62rem 1.15rem;font-size:.86rem}
+
+/* email button scales down gracefully on tiny screens */
+.btn-email{
+  font-size:clamp(.72rem,3.4vw,.94rem);
+  padding:clamp(.72rem,2.6vw,.9rem) clamp(.9rem,3.6vw,1.6rem);
+  letter-spacing:0;
+  max-width:100%;
+}
 
 /* ============ NAV ============ */
 .nav{
@@ -202,7 +210,7 @@ img,svg{display:block}
 .lede{
   font-size:clamp(1rem,1.35vw,1.16rem);
   color:var(--muted);
-  max-width:56ch;
+  max-width:58ch;
   margin-bottom:40px;
 }
 .lede strong{color:#d6dbe6;font-weight:500}
@@ -243,7 +251,7 @@ img,svg{display:block}
 }
 .marquee-track{
   display:flex;gap:52px;width:max-content;
-  animation:scroll 38s linear infinite;
+  animation:scroll 44s linear infinite;
   will-change:transform;
 }
 .marquee:hover .marquee-track{animation-play-state:paused}
@@ -303,6 +311,7 @@ section{padding:120px 0;position:relative}
 .card.g-amber{--glow:rgba(251,191,36,.13)}
 .card.g-green{--glow:rgba(52,211,153,.14)}
 .card.g-blue{--glow:rgba(96,165,250,.15)}
+.card.g-teal{--glow:rgba(20,184,166,.15)}
 
 .icon{
   width:48px;height:48px;border-radius:14px;
@@ -319,6 +328,7 @@ section{padding:120px 0;position:relative}
 .i-amber{background:linear-gradient(135deg,rgba(251,191,36,.16),rgba(251,191,36,.03));color:#fcd34d}
 .i-green{background:linear-gradient(135deg,rgba(52,211,153,.16),rgba(52,211,153,.03));color:#6ee7b7}
 .i-blue{background:linear-gradient(135deg,rgba(96,165,250,.18),rgba(96,165,250,.03));color:#93c5fd}
+.i-teal{background:linear-gradient(135deg,rgba(20,184,166,.18),rgba(20,184,166,.03));color:#5eead4}
 
 .card h3{font-size:1.18rem;margin-bottom:10px;letter-spacing:-.02em}
 .card p{font-size:.92rem;color:var(--muted);line-height:1.68}
@@ -486,9 +496,9 @@ footer{
     </h1>
 
     <p class="lede reveal" style="--d:.16s">
-      SCORE LLC is a full-service digital studio. We grow social media audiences, design
-      scroll-stopping content, edit video that converts, build websites and apps people
-      actually enjoy using — and wire <strong>AI into the whole workflow</strong>.
+      SCORE LLC is an independent digital services company built for businesses that want to move faster.
+      Creative on one side, technical on the other — social, content, video, web, IT, and AI, all from
+      one place. <strong>No account managers, no hand-offs.</strong>
     </p>
 
     <div class="cta-row reveal" style="--d:.24s">
@@ -498,12 +508,12 @@ footer{
 
     <div class="hero-stats reveal" style="--d:.32s">
       <div class="stat">
-        <div class="stat-num">Organic-first</div>
-        <div class="stat-label">Growth strategy</div>
+        <div class="stat-num">Creative + Tech</div>
+        <div class="stat-label">Under one roof</div>
       </div>
       <div class="stat">
-        <div class="stat-num">Design → Build</div>
-        <div class="stat-label">One studio, full stack</div>
+        <div class="stat-num">No hand-offs</div>
+        <div class="stat-label">Direct access</div>
       </div>
       <div class="stat">
         <div class="stat-num">AI-powered</div>
@@ -517,14 +527,16 @@ footer{
 <div class="marquee">
   <div class="marquee-track">
     <div class="marquee-item">
-      <span>Social Media Growth</span><span>Content Creation</span><span>Adobe Suite</span>
-      <span>Video Editing</span><span>Web Development</span><span>App Development</span>
-      <span>Data Tracking</span><span>AI Integration</span>
+      <span>Social Media Growth</span><span>Content Creation</span><span>Adobe Creative Suite</span>
+      <span>Video Production</span><span>Web &amp; App Development</span><span>Data &amp; Custom Tools</span>
+      <span>PC Software Repair</span><span>Networking</span><span>Servers</span>
+      <span>System Setups</span><span>AI Integration</span>
     </div>
     <div class="marquee-item" aria-hidden="true">
-      <span>Social Media Growth</span><span>Content Creation</span><span>Adobe Suite</span>
-      <span>Video Editing</span><span>Web Development</span><span>App Development</span>
-      <span>Data Tracking</span><span>AI Integration</span>
+      <span>Social Media Growth</span><span>Content Creation</span><span>Adobe Creative Suite</span>
+      <span>Video Production</span><span>Web &amp; App Development</span><span>Data &amp; Custom Tools</span>
+      <span>PC Software Repair</span><span>Networking</span><span>Servers</span>
+      <span>System Setups</span><span>AI Integration</span>
     </div>
   </div>
 </div>
@@ -534,16 +546,16 @@ footer{
   <div class="container">
     <div class="sec-head reveal">
       <div class="eyebrow">What we do</div>
-      <h2>Everything your brand needs, under one roof.</h2>
+      <h2>Creative on one side. Technical on the other.</h2>
       <p>
-        From the first post to the final deploy — strategy, creative, code, and automation
+        From the first post to the final deploy — strategy, creative, code, IT, and automation
         built to work together instead of in silos.
       </p>
     </div>
 
     <div class="bento">
 
-      <!-- 1 -->
+      <!-- 1 — Social (span2) -->
       <article class="card span2 g-cyan reveal">
         <div class="icon i-cyan">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
@@ -564,7 +576,7 @@ footer{
         </div>
       </article>
 
-      <!-- 2 -->
+      <!-- 2 — Content -->
       <article class="card g-pink reveal" style="--d:.06s">
         <div class="icon i-pink">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
@@ -579,7 +591,7 @@ footer{
         </p>
       </article>
 
-      <!-- 3 -->
+      <!-- 3 — Adobe -->
       <article class="card g-violet reveal">
         <div class="icon i-violet">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
@@ -588,12 +600,12 @@ footer{
         </div>
         <h3>Adobe Creative Suite</h3>
         <p>
-          Photoshop, Illustrator, and the wider Adobe toolkit — used to design, retouch,
-          composite, and edit content that looks genuinely premium.
+          The full Adobe Creative Suite, used end-to-end — design, illustration, photo work,
+          motion, and layout for polished brand assets that hold up anywhere.
         </p>
       </article>
 
-      <!-- 4 -->
+      <!-- 4 — Video -->
       <article class="card g-amber reveal" style="--d:.06s">
         <div class="icon i-amber">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
@@ -603,12 +615,12 @@ footer{
         </div>
         <h3>Video Production</h3>
         <p>
-          Sony Vegas, After Effects, and more — editing, motion graphics, and short-form
-          ads engineered for retention and conversion.
+          Editing, motion graphics, and short-form ads engineered for retention and
+          conversion — from raw footage to finished cut.
         </p>
       </article>
 
-      <!-- 5 -->
+      <!-- 5 — Web & App -->
       <article class="card g-blue reveal" style="--d:.12s">
         <div class="icon i-blue">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
@@ -622,7 +634,7 @@ footer{
         </p>
       </article>
 
-      <!-- 6 -->
+      <!-- 6 — Data & Tools -->
       <article class="card g-green reveal">
         <div class="icon i-green">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
@@ -636,8 +648,30 @@ footer{
         </p>
       </article>
 
-      <!-- 7 -->
-      <article class="card span2 g-violet reveal" style="--d:.06s">
+      <!-- 7 — IT Support (NEW) -->
+      <article class="card g-teal reveal" style="--d:.06s">
+        <div class="icon i-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="6" rx="2"/>
+            <rect x="3" y="14" width="18" height="6" rx="2"/>
+            <path d="M7 7h.01M7 17h.01"/>
+          </svg>
+        </div>
+        <h3>IT Support &amp; Infrastructure</h3>
+        <p>
+          Hands-on IT work — PC software repair, networking, servers, and full system setups.
+          Straightforward fixes and reliable configurations, done right the first time.
+        </p>
+        <div class="tag-row">
+          <span class="tag">PC Repair</span>
+          <span class="tag">Networking</span>
+          <span class="tag">Servers</span>
+          <span class="tag">Setups</span>
+        </div>
+      </article>
+
+      <!-- 8 — AI -->
+      <article class="card g-violet reveal" style="--d:.12s">
         <div class="icon i-violet">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
             <rect x="7.5" y="7.5" width="9" height="9" rx="2.5"/>
@@ -646,16 +680,14 @@ footer{
         </div>
         <h3>AI Integration</h3>
         <p>
-          We don't just talk about AI — we deploy it. Custom assistants embedded into your
-          website to greet visitors, answer questions, qualify leads, and support customers
-          around the clock. Plus AI woven into your day-to-day workflows to cut busywork and
-          move faster.
+          AI assistants embedded into your site — greeting visitors, answering questions,
+          qualifying leads, and supporting customers around the clock. Plus AI woven into
+          daily workflows to cut busywork.
         </p>
         <div class="tag-row">
-          <span class="tag">AI Chat Assistants</span>
-          <span class="tag">Workflow Automation</span>
-          <span class="tag">Smart Support</span>
-          <span class="tag">Lead Qualification</span>
+          <span class="tag">Chat Assistants</span>
+          <span class="tag">Automation</span>
+          <span class="tag">Support</span>
         </div>
       </article>
 
@@ -676,7 +708,7 @@ footer{
       <div class="step">
         <span class="step-num">01</span>
         <h4>Discover</h4>
-        <p>We dig into your brand, audience, and goals — then map out where the real opportunities are.</p>
+        <p>We dig into your business, audience, and goals — then map out where the real opportunities are.</p>
       </div>
       <div class="step">
         <span class="step-num">02</span>
@@ -686,12 +718,12 @@ footer{
       <div class="step">
         <span class="step-num">03</span>
         <h4>Build</h4>
-        <p>Video edits, production-ready assets, and clean code — shipped, tested, and integrated.</p>
+        <p>Video edits, production-ready assets, clean code, and IT setups — shipped, tested, and integrated.</p>
       </div>
       <div class="step">
         <span class="step-num">04</span>
         <h4>Scale</h4>
-        <p>Track the data, refine what works, and layer in automation and AI to keep momentum cheap.</p>
+        <p>Track the data, refine what works, and layer in automation and AI to keep momentum without adding overhead.</p>
       </div>
     </div>
   </div>
@@ -705,11 +737,11 @@ footer{
         <div class="eyebrow" style="justify-content:center">Let's talk</div>
         <h2>Got an idea? Let's turn it into <span class="grad">something that scores.</span></h2>
         <p>
-          Tell us what you're trying to grow, fix, or launch. We'll come back with honest
-          recommendations — and a few ideas you probably haven't considered yet.
+          Tell us what you're trying to accomplish and where you want to be. We'll come back
+          with honest recommendations — and a few ideas you probably haven't considered yet.
         </p>
         <div class="cta-buttons">
-          <a href="mailto:scorellc@outlook.com" class="btn btn-primary">scorellc@outlook.com</a>
+          <a href="mailto:scorellc@outlook.com" class="btn btn-primary btn-email">scorellc@outlook.com</a>
           <a href="#services" class="btn btn-ghost">See what we offer</a>
         </div>
       </div>
