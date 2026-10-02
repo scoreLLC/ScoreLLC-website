@@ -62,7 +62,7 @@ img,svg{display:block}
   padding:.9rem 1.6rem;border-radius:999px;
   font-size:.94rem;font-weight:500;font-family:'Inter',sans-serif;
   border:1px solid transparent;cursor:pointer;
-  transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s,background .4s,border-color .4s;
+  transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s,background .4s,border-color .4s,color .4s;
   white-space:nowrap;
   position:relative;
 }
@@ -99,6 +99,26 @@ img,svg{display:block}
   letter-spacing:0;
   max-width:100%;
 }
+
+/* Instagram button — brand gradient sweeps in on hover */
+.btn-ig{
+  border-color:var(--border-strong);
+  background-color:rgba(212,175,55,.04);
+  background-image:linear-gradient(45deg,#f9ce34 0%,#ee2a7b 52%,#6228d7 100%);
+  background-repeat:no-repeat;
+  background-position:0 0;
+  background-size:0% 100%;
+  color:var(--text);
+  transition:background-size .55s cubic-bezier(.16,1,.3,1),color .4s,transform .4s cubic-bezier(.16,1,.3,1),border-color .4s,box-shadow .4s;
+}
+.btn-ig:hover{
+  background-size:100% 100%;
+  color:#fff;
+  border-color:transparent;
+  transform:translateY(-3px);
+  box-shadow:0 20px 50px -20px rgba(238,42,123,.65);
+}
+.btn-ig svg{width:17px;height:17px}
 
 /* ============ NAV ============ */
 .nav{
@@ -152,6 +172,28 @@ img,svg{display:block}
 }
 .nav-links a:hover{color:var(--text)}
 .nav-links a:hover::after{width:100%}
+
+.nav-actions{display:flex;align-items:center;gap:12px}
+
+/* nav instagram icon */
+.nav-ig{
+  width:38px;height:38px;flex-shrink:0;
+  display:grid;place-items:center;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:rgba(212,175,55,.02);
+  color:var(--muted);
+  position:relative;
+  transition:color .35s,border-color .35s,transform .45s cubic-bezier(.16,1,.3,1);
+}
+.nav-ig svg{width:19px;height:19px}
+.nav-ig:hover{
+  color:#fff;
+  border-color:transparent;
+  transform:translateY(-3px);
+  background-image:linear-gradient(45deg,#f9ce34,#ee2a7b 52%,#6228d7);
+  box-shadow:0 14px 32px -14px rgba(238,42,123,.7);
+}
 
 /* ============ HERO ============ */
 .hero{
@@ -283,6 +325,7 @@ img,svg{display:block}
 
 /* ============ SECTIONS ============ */
 section{padding:120px 0;position:relative}
+.sec-tight{padding-top:0}
 .sec-head{max-width:660px;margin-bottom:64px}
 .eyebrow{
   display:inline-flex;align-items:center;gap:8px;
@@ -378,6 +421,52 @@ section{padding:120px 0;position:relative}
 }
 .step:hover::after{width:calc(100% - 56px)}
 
+/* ============ INSTAGRAM ============ */
+.ig-card{
+  position:relative;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+  gap:30px;
+  padding:40px 42px;
+  border-radius:var(--radius);
+  border:1px solid var(--border);
+  background:linear-gradient(180deg,rgba(212,175,55,.05),rgba(212,175,55,.008));
+  overflow:hidden;
+  transition:border-color .5s,transform .5s cubic-bezier(.16,1,.3,1);
+}
+.ig-card::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  opacity:.12;transition:opacity .6s ease;
+  background:
+    radial-gradient(520px circle at 0% 0%,#f9ce34,transparent 58%),
+    radial-gradient(520px circle at 100% 100%,#ee2a7b,transparent 58%),
+    radial-gradient(420px circle at 60% 0%,#6228d7,transparent 60%);
+}
+.ig-card:hover::before{opacity:.24}
+.ig-card:hover{border-color:rgba(212,175,55,.24);transform:translateY(-4px)}
+.ig-card > *{position:relative;z-index:1}
+
+.ig-left{display:flex;align-items:center;gap:24px;min-width:min(100%,420px);flex:1 1 420px}
+.ig-icon{
+  width:58px;height:58px;flex-shrink:0;
+  border-radius:17px;
+  display:grid;place-items:center;
+  color:#fff;
+  background:linear-gradient(45deg,#f9ce34 0%,#ee2a7b 52%,#6228d7 100%);
+  box-shadow:0 14px 34px -16px rgba(238,42,123,.7);
+  transition:transform .55s cubic-bezier(.16,1,.3,1);
+}
+.ig-icon svg{width:27px;height:27px}
+.ig-card:hover .ig-icon{transform:scale(1.07) rotate(-6deg)}
+
+.ig-copy h3{font-size:1.24rem;margin-bottom:8px;letter-spacing:-.02em}
+.ig-copy p{font-size:.93rem;color:var(--muted);max-width:46ch}
+.ig-handle{
+  color:var(--gold-2);font-weight:500;
+  border-bottom:1px solid rgba(212,175,55,.32);
+  transition:color .3s,border-color .3s;
+}
+.ig-handle:hover{color:var(--gold-1);border-color:var(--gold-1)}
+
 /* ============ CTA ============ */
 .cta-wrap{padding:0 0 130px}
 .glow-card{
@@ -425,6 +514,23 @@ footer{
 .foot-links{display:flex;flex-wrap:wrap;gap:28px}
 .foot-links a{font-size:.87rem;color:var(--muted);transition:color .3s}
 .foot-links a:hover{color:var(--text)}
+.foot-social{display:flex;align-items:center;gap:12px}
+.foot-ig{
+  width:36px;height:36px;flex-shrink:0;
+  display:grid;place-items:center;
+  border-radius:11px;
+  border:1px solid var(--border);
+  color:var(--muted);
+  transition:color .35s,border-color .35s,transform .45s cubic-bezier(.16,1,.3,1),background-image .35s;
+}
+.foot-ig svg{width:18px;height:18px}
+.foot-ig:hover{
+  color:#fff;border-color:transparent;transform:translateY(-3px);
+  background-image:linear-gradient(45deg,#f9ce34,#ee2a7b 52%,#6228d7);
+  box-shadow:0 12px 28px -14px rgba(238,42,123,.7);
+}
+.foot-handle{font-size:.83rem;color:var(--muted);transition:color .3s}
+.foot-handle:hover{color:var(--gold-2)}
 .copy{font-size:.8rem;color:#5b5548}
 
 /* ============ REVEAL ============ */
@@ -457,6 +563,12 @@ footer{
   .nav .btn-sm{display:none}
   .foot-inner{flex-direction:column;align-items:flex-start}
   section{padding:80px 0}
+
+  /* Instagram card stacks on mobile */
+  .ig-card{padding:30px 24px;gap:24px}
+  .ig-left{flex-direction:column;align-items:flex-start;gap:18px;flex:1 1 100%}
+  .ig-copy p{max-width:none}
+  .ig-card .btn{width:100%}
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -465,6 +577,17 @@ footer{
   html{scroll-behavior:auto}
 }
 </style>
+
+<!-- Organization schema (helps Google link your site to your Instagram) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "SCORE LLC",
+  "email": "scorellc@outlook.com",
+  "sameAs": ["https://www.instagram.com/score_llc/"]
+}
+</script>
 </head>
 <body>
 
@@ -486,12 +609,24 @@ footer{
       </svg>
       <span class="logo-text">SCORE<span>LLC</span></span>
     </a>
+
     <nav class="nav-links">
       <a href="#services">Services</a>
       <a href="#approach">Approach</a>
+      <a href="#instagram">Instagram</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a href="#contact" class="btn btn-primary btn-sm">Start a project</a>
+
+    <div class="nav-actions">
+      <a href="https://www.instagram.com/score_llc/" class="nav-ig" target="_blank" rel="noopener noreferrer" aria-label="SCORE LLC on Instagram" title="@score_llc on Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/>
+          <circle cx="12" cy="12" r="4.2"/>
+          <circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+      <a href="#contact" class="btn btn-primary btn-sm">Start a project</a>
+    </div>
   </div>
 </header>
 
@@ -745,6 +880,40 @@ footer{
   </div>
 </section>
 
+<!-- ================= INSTAGRAM ================= -->
+<section id="instagram" class="sec-tight">
+  <div class="container">
+    <div class="ig-card reveal">
+      <div class="ig-left">
+        <div class="ig-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/>
+            <circle cx="12" cy="12" r="4.2"/>
+            <circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
+        <div class="ig-copy">
+          <h3>Follow the work on Instagram</h3>
+          <p>
+            Fresh edits, design breakdowns, builds in progress, and the occasional server rack.
+            Follow along at
+            <a class="ig-handle" href="https://www.instagram.com/score_llc/" target="_blank" rel="noopener noreferrer">@score_llc</a>.
+          </p>
+        </div>
+      </div>
+
+      <a href="https://www.instagram.com/score_llc/" class="btn btn-ig" target="_blank" rel="noopener noreferrer" aria-label="Follow SCORE LLC on Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/>
+          <circle cx="12" cy="12" r="4.2"/>
+          <circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"/>
+        </svg>
+        <span>Follow @score_llc</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ================= CTA ================= -->
 <div class="cta-wrap" id="contact">
   <div class="container">
@@ -758,7 +927,14 @@ footer{
         </p>
         <div class="cta-buttons">
           <a href="mailto:scorellc@outlook.com" class="btn btn-primary btn-email">scorellc@outlook.com</a>
-          <a href="#services" class="btn btn-ghost">See what we offer</a>
+          <a href="https://www.instagram.com/score_llc/" class="btn btn-ig" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/>
+              <circle cx="12" cy="12" r="4.2"/>
+              <circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"/>
+            </svg>
+            <span>DM us on Instagram</span>
+          </a>
         </div>
       </div>
     </div>
@@ -783,11 +959,25 @@ footer{
       </svg>
       <span class="logo-text">SCORE<span>LLC</span></span>
     </a>
+
     <nav class="foot-links">
       <a href="#services">Services</a>
       <a href="#approach">Approach</a>
+      <a href="#instagram">Instagram</a>
       <a href="#contact">Contact</a>
     </nav>
+
+    <div class="foot-social">
+      <a href="https://www.instagram.com/score_llc/" class="foot-ig" target="_blank" rel="noopener noreferrer" aria-label="SCORE LLC on Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/>
+          <circle cx="12" cy="12" r="4.2"/>
+          <circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+      <a href="https://www.instagram.com/score_llc/" class="foot-handle" target="_blank" rel="noopener noreferrer">@score_llc</a>
+    </div>
+
     <div class="copy">© <span id="year"></span> SCORE LLC. All rights reserved.</div>
   </div>
 </footer>
