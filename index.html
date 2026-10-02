@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SCORE LLC — Digital Services, IT & AI Integration</title>
 <meta name="description" content="SCORE LLC is an independent digital services company. Social media growth, content, video, web development, hands-on IT work, and AI integration — all from one place.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23070A12'/%3E%3Ccircle cx='32' cy='32' r='24' fill='none' stroke='%23D4AF37' stroke-width='5'/%3E%3Ccircle cx='32' cy='32' r='13' fill='none' stroke='%23D4AF37' stroke-width='3.5'/%3E%3Cpath d='M32 22 L34.5 29.5 L42 32 L34.5 34.5 L32 42 L29.5 34.5 L22 32 L29.5 29.5 Z' fill='%23D4AF37'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -13,15 +14,16 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
 :root{
-  --bg:#05060a;
-  --panel:#080a11;
-  --border:rgba(255,255,255,.08);
-  --border-strong:rgba(255,255,255,.18);
-  --text:#eaecf2;
-  --muted:#8b93a7;
-  --c1:#22d3ee;
-  --c2:#7c3aed;
-  --c3:#f472b6;
+  --bg:#070A12;
+  --bg-2:#050810;
+  --panel:#0A0E1A;
+  --border:rgba(212,175,55,.10);
+  --border-strong:rgba(212,175,55,.30);
+  --text:#F5F0E6;
+  --muted:#8A8478;
+  --gold-1:#F7E9B0;
+  --gold-2:#D4AF37;
+  --gold-3:#A67C00;
   --radius:22px;
   --max:1200px;
 }
@@ -42,7 +44,7 @@ body{
 body::after{
   content:"";
   position:fixed;inset:0;
-  pointer-events:none;z-index:9999;opacity:.035;
+  pointer-events:none;z-index:9999;opacity:.04;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -50,7 +52,7 @@ h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;line-height:1.08;letter-spaci
 
 a{color:inherit;text-decoration:none}
 img,svg{display:block}
-::selection{background:rgba(124,58,237,.5);color:#fff}
+::selection{background:rgba(212,175,55,.4);color:#fff}
 
 .container{max-width:var(--max);margin:0 auto;padding:0 24px}
 
@@ -65,26 +67,27 @@ img,svg{display:block}
   position:relative;
 }
 .btn-primary{
-  background:linear-gradient(120deg,var(--c1),var(--c2) 55%,var(--c3));
+  background:linear-gradient(120deg,var(--gold-1),var(--gold-2) 55%,var(--gold-3));
   background-size:200% 100%;
-  color:#fff;
-  box-shadow:0 12px 40px -14px rgba(124,58,237,.9);
+  color:#0b101c;
+  font-weight:600;
+  box-shadow:0 12px 40px -14px rgba(212,175,55,.65);
 }
 .btn-primary:hover{
   transform:translateY(-3px);
   background-position:100% 0;
-  box-shadow:0 22px 55px -14px rgba(124,58,237,1);
+  box-shadow:0 22px 55px -14px rgba(212,175,55,.85);
 }
 .btn-ghost{
   border-color:var(--border);
-  background:rgba(255,255,255,.03);
+  background:rgba(212,175,55,.02);
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
   color:var(--text);
 }
 .btn-ghost:hover{
   border-color:var(--border-strong);
-  background:rgba(255,255,255,.07);
+  background:rgba(212,175,55,.06);
   transform:translateY(-3px);
 }
 .btn-sm{padding:.62rem 1.15rem;font-size:.86rem}
@@ -106,7 +109,7 @@ img,svg{display:block}
 }
 .nav.scrolled{
   padding:11px 0;
-  background:rgba(5,6,10,.72);
+  background:rgba(7,10,18,.78);
   backdrop-filter:blur(18px) saturate(160%);
   -webkit-backdrop-filter:blur(18px) saturate(160%);
   border-bottom-color:var(--border);
@@ -115,16 +118,27 @@ img,svg{display:block}
   max-width:var(--max);margin:0 auto;padding:0 24px;
   display:flex;align-items:center;justify-content:space-between;gap:24px;
 }
-.logo{display:flex;align-items:center;gap:11px;font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.02em}
-.logo-mark{
-  width:34px;height:34px;border-radius:10px;
-  display:grid;place-items:center;
-  background:linear-gradient(135deg,var(--c1),var(--c2) 60%,var(--c3));
-  color:#fff;font-size:1.05rem;font-weight:700;
-  box-shadow:0 6px 22px -8px rgba(124,58,237,.9);
+
+.logo{
+  display:flex;align-items:center;gap:12px;
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:700;letter-spacing:-.01em;
 }
-.logo-text{font-size:1.02rem;letter-spacing:.02em}
-.logo-text span{color:var(--muted);font-weight:500;margin-left:5px;font-size:.78rem;letter-spacing:.14em}
+.logo-mark{
+  width:32px;height:32px;flex-shrink:0;
+  display:block;
+  filter:drop-shadow(0 2px 10px rgba(212,175,55,.4));
+  transition:transform .5s cubic-bezier(.16,1,.3,1);
+}
+.logo:hover .logo-mark{transform:rotate(90deg)}
+.logo-text{
+  font-size:1.02rem;letter-spacing:.06em;color:var(--text);
+  display:inline-flex;align-items:baseline;gap:6px;
+}
+.logo-text span{
+  color:var(--gold-2);font-weight:500;
+  font-size:.72rem;letter-spacing:.22em;
+}
 
 .nav-links{display:flex;gap:34px}
 .nav-links a{
@@ -133,7 +147,7 @@ img,svg{display:block}
 }
 .nav-links a::after{
   content:"";position:absolute;left:0;bottom:-6px;height:1px;width:0;
-  background:linear-gradient(90deg,var(--c1),var(--c3));
+  background:linear-gradient(90deg,var(--gold-1),var(--gold-3));
   transition:width .4s cubic-bezier(.16,1,.3,1);
 }
 .nav-links a:hover{color:var(--text)}
@@ -151,17 +165,17 @@ img,svg{display:block}
 .hero::before{
   content:"";position:absolute;inset:0;z-index:-1;
   background-image:
-    linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+    linear-gradient(rgba(212,175,55,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(212,175,55,.05) 1px,transparent 1px);
   background-size:64px 64px;
   -webkit-mask-image:radial-gradient(ellipse 90% 65% at 50% 25%,#000 0%,transparent 78%);
   mask-image:radial-gradient(ellipse 90% 65% at 50% 25%,#000 0%,transparent 78%);
 }
 .aurora{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
-.blob{position:absolute;border-radius:50%;filter:blur(110px);opacity:.42;will-change:transform}
-.blob.b1{width:560px;height:560px;background:#2563eb;top:-190px;left:-140px;animation:drift1 20s ease-in-out infinite}
-.blob.b2{width:480px;height:480px;background:#7c3aed;top:60px;right:-140px;animation:drift2 24s ease-in-out infinite}
-.blob.b3{width:420px;height:420px;background:#06b6d4;bottom:-220px;left:38%;opacity:.3;animation:drift3 28s ease-in-out infinite}
+.blob{position:absolute;border-radius:50%;filter:blur(110px);will-change:transform}
+.blob.b1{width:600px;height:600px;background:#16223d;opacity:.5;top:-200px;left:-160px;animation:drift1 22s ease-in-out infinite}
+.blob.b2{width:520px;height:520px;background:#8B6914;opacity:.14;top:80px;right:-160px;animation:drift2 26s ease-in-out infinite}
+.blob.b3{width:440px;height:440px;background:#3d2f0a;opacity:.22;bottom:-240px;left:42%;animation:drift3 30s ease-in-out infinite}
 
 @keyframes drift1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(90px,70px) scale(1.12)}}
 @keyframes drift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-80px,60px) scale(1.15)}}
@@ -174,10 +188,10 @@ img,svg{display:block}
   padding:.42rem .95rem .42rem .6rem;
   border:1px solid var(--border);
   border-radius:999px;
-  background:rgba(255,255,255,.035);
+  background:rgba(212,175,55,.04);
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
-  font-size:.8rem;color:#c3cad9;letter-spacing:.01em;
+  font-size:.8rem;color:#c3bcab;letter-spacing:.01em;
   margin-bottom:30px;
 }
 .dot{
@@ -199,11 +213,11 @@ img,svg{display:block}
   text-wrap:balance;
 }
 .grad{
-  background:linear-gradient(100deg,#22d3ee 0%,#a78bfa 42%,#f472b6 78%,#22d3ee 100%);
+  background:linear-gradient(100deg,#F7E9B0 0%,#D4AF37 42%,#A67C00 78%,#F7E9B0 100%);
   background-size:220% 100%;
   -webkit-background-clip:text;background-clip:text;
   color:transparent;
-  animation:shift 9s linear infinite;
+  animation:shift 10s linear infinite;
 }
 @keyframes shift{to{background-position:220% 0}}
 
@@ -213,7 +227,7 @@ img,svg{display:block}
   max-width:58ch;
   margin-bottom:40px;
 }
-.lede strong{color:#d6dbe6;font-weight:500}
+.lede strong{color:#ddd6c5;font-weight:500}
 
 .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:74px}
 
@@ -225,7 +239,7 @@ img,svg{display:block}
   padding:20px 22px;
   border:1px solid var(--border);
   border-radius:18px;
-  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.012));
+  background:linear-gradient(180deg,rgba(212,175,55,.05),rgba(212,175,55,.008));
   backdrop-filter:blur(10px);
   -webkit-backdrop-filter:blur(10px);
   transition:border-color .45s,transform .45s cubic-bezier(.16,1,.3,1);
@@ -234,7 +248,7 @@ img,svg{display:block}
 .stat-num{
   font-family:'Space Grotesk',sans-serif;
   font-size:1.65rem;font-weight:600;letter-spacing:-.03em;
-  background:linear-gradient(120deg,#fff,#9aa6c0);
+  background:linear-gradient(120deg,#F7E9B0,#D4AF37);
   -webkit-background-clip:text;background-clip:text;color:transparent;
 }
 .stat-label{font-size:.79rem;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-top:2px}
@@ -245,7 +259,7 @@ img,svg{display:block}
   border-bottom:1px solid var(--border);
   padding:24px 0;
   overflow:hidden;
-  background:rgba(255,255,255,.012);
+  background:rgba(212,175,55,.012);
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
   mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
 }
@@ -259,11 +273,11 @@ img,svg{display:block}
 .marquee-item{
   display:flex;align-items:center;gap:52px;
   font-family:'Space Grotesk',sans-serif;
-  font-size:1rem;color:#6b7488;letter-spacing:.02em;white-space:nowrap;
+  font-size:1rem;color:#6b6455;letter-spacing:.02em;white-space:nowrap;
 }
 .marquee-item::after{
   content:"";width:5px;height:5px;border-radius:50%;
-  background:linear-gradient(135deg,var(--c1),var(--c3));
+  background:linear-gradient(135deg,var(--gold-1),var(--gold-3));
   flex-shrink:0;
 }
 
@@ -273,11 +287,11 @@ section{padding:120px 0;position:relative}
 .eyebrow{
   display:inline-flex;align-items:center;gap:8px;
   font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--c1);font-weight:500;margin-bottom:18px;
+  color:var(--gold-2);font-weight:500;margin-bottom:18px;
 }
 .eyebrow::before{
   content:"";width:26px;height:1px;
-  background:linear-gradient(90deg,var(--c1),transparent);
+  background:linear-gradient(90deg,var(--gold-2),transparent);
 }
 .sec-head h2{font-size:clamp(2rem,4.2vw,3.2rem);margin-bottom:18px;text-wrap:balance}
 .sec-head p{color:var(--muted);font-size:1.03rem;max-width:52ch}
@@ -289,14 +303,14 @@ section{padding:120px 0;position:relative}
   padding:30px 28px 32px;
   border-radius:var(--radius);
   border:1px solid var(--border);
-  background:linear-gradient(180deg,rgba(255,255,255,.048),rgba(255,255,255,.012));
+  background:linear-gradient(180deg,rgba(212,175,55,.045),rgba(212,175,55,.008));
   overflow:hidden;
   transition:transform .5s cubic-bezier(.16,1,.3,1),border-color .5s;
 }
 .card::before{
   content:"";position:absolute;inset:0;border-radius:inherit;
   opacity:0;transition:opacity .5s;
-  background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),var(--glow,rgba(124,58,237,.16)),transparent 62%);
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(212,175,55,.14),transparent 62%);
   pointer-events:none;
 }
 .card:hover::before{opacity:1}
@@ -304,31 +318,21 @@ section{padding:120px 0;position:relative}
 .card > *{position:relative;z-index:1}
 .span2{grid-column:span 2}
 
-/* per-card glow tint */
-.card.g-cyan{--glow:rgba(34,211,238,.15)}
-.card.g-violet{--glow:rgba(124,58,237,.17)}
-.card.g-pink{--glow:rgba(244,114,182,.15)}
-.card.g-amber{--glow:rgba(251,191,36,.13)}
-.card.g-green{--glow:rgba(52,211,153,.14)}
-.card.g-blue{--glow:rgba(96,165,250,.15)}
-.card.g-teal{--glow:rgba(20,184,166,.15)}
-
 .icon{
   width:48px;height:48px;border-radius:14px;
   display:grid;place-items:center;
-  border:1px solid rgba(255,255,255,.1);
+  border:1px solid rgba(212,175,55,.22);
+  background:linear-gradient(135deg,rgba(212,175,55,.13),rgba(212,175,55,.02));
+  color:var(--gold-2);
   margin-bottom:22px;
-  transition:transform .5s cubic-bezier(.16,1,.3,1);
+  transition:transform .5s cubic-bezier(.16,1,.3,1),border-color .4s,color .4s;
 }
-.card:hover .icon{transform:scale(1.08) rotate(-4deg)}
+.card:hover .icon{
+  transform:scale(1.08) rotate(-4deg);
+  border-color:rgba(212,175,55,.4);
+  color:var(--gold-1);
+}
 .icon svg{width:23px;height:23px}
-.i-cyan{background:linear-gradient(135deg,rgba(34,211,238,.18),rgba(34,211,238,.03));color:#67e8f9}
-.i-violet{background:linear-gradient(135deg,rgba(124,58,237,.2),rgba(124,58,237,.03));color:#c4b5fd}
-.i-pink{background:linear-gradient(135deg,rgba(244,114,182,.18),rgba(244,114,182,.03));color:#f9a8d4}
-.i-amber{background:linear-gradient(135deg,rgba(251,191,36,.16),rgba(251,191,36,.03));color:#fcd34d}
-.i-green{background:linear-gradient(135deg,rgba(52,211,153,.16),rgba(52,211,153,.03));color:#6ee7b7}
-.i-blue{background:linear-gradient(135deg,rgba(96,165,250,.18),rgba(96,165,250,.03));color:#93c5fd}
-.i-teal{background:linear-gradient(135deg,rgba(20,184,166,.18),rgba(20,184,166,.03));color:#5eead4}
 
 .card h3{font-size:1.18rem;margin-bottom:10px;letter-spacing:-.02em}
 .card p{font-size:.92rem;color:var(--muted);line-height:1.68}
@@ -337,11 +341,11 @@ section{padding:120px 0;position:relative}
   font-size:.71rem;letter-spacing:.05em;
   padding:.28rem .65rem;border-radius:999px;
   border:1px solid var(--border);
-  background:rgba(255,255,255,.03);
-  color:#98a1b5;
+  background:rgba(212,175,55,.03);
+  color:#a49b87;
   transition:border-color .35s, color .35s;
 }
-.card:hover .tag{border-color:rgba(255,255,255,.14);color:#b8bfd0}
+.card:hover .tag{border-color:rgba(212,175,55,.28);color:var(--gold-1)}
 
 /* ============ APPROACH ============ */
 .approach-grid{
@@ -356,12 +360,12 @@ section{padding:120px 0;position:relative}
   position:relative;
   transition:background .5s;
 }
-.step:hover{background:#0c0f18}
+.step:hover{background:#0e1322}
 .step-num{
   font-family:'Space Grotesk',sans-serif;
   font-size:.8rem;letter-spacing:.18em;
   color:transparent;
-  background:linear-gradient(120deg,var(--c1),var(--c3));
+  background:linear-gradient(120deg,var(--gold-1),var(--gold-3));
   -webkit-background-clip:text;background-clip:text;
   margin-bottom:22px;display:block;
 }
@@ -369,7 +373,7 @@ section{padding:120px 0;position:relative}
 .step p{font-size:.88rem;color:var(--muted);line-height:1.65}
 .step::after{
   content:"";position:absolute;left:28px;top:0;height:2px;width:0;
-  background:linear-gradient(90deg,var(--c1),var(--c2));
+  background:linear-gradient(90deg,var(--gold-1),var(--gold-3));
   transition:width .7s cubic-bezier(.16,1,.3,1);
 }
 .step:hover::after{width:calc(100% - 56px)}
@@ -378,12 +382,12 @@ section{padding:120px 0;position:relative}
 .cta-wrap{padding:0 0 130px}
 .glow-card{
   position:relative;border-radius:34px;padding:1px;
-  background:linear-gradient(135deg,rgba(34,211,238,.65),rgba(124,58,237,.65) 45%,rgba(244,114,182,.55));
-  box-shadow:0 40px 100px -50px rgba(124,58,237,.9);
+  background:linear-gradient(135deg,rgba(247,233,176,.55),rgba(212,175,55,.5) 45%,rgba(166,124,0,.4));
+  box-shadow:0 40px 100px -50px rgba(212,175,55,.55);
 }
 .glow-inner{
   border-radius:33px;
-  background:radial-gradient(ellipse 90% 130% at 50% 0%,#101223 0%,#07080f 62%);
+  background:radial-gradient(ellipse 90% 130% at 50% 0%,#0d1424 0%,#050810 62%);
   padding:78px 44px;
   text-align:center;
   position:relative;overflow:hidden;
@@ -391,8 +395,8 @@ section{padding:120px 0;position:relative}
 .glow-inner::before{
   content:"";position:absolute;inset:0;
   background-image:
-    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+    linear-gradient(rgba(212,175,55,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(212,175,55,.04) 1px,transparent 1px);
   background-size:52px 52px;
   -webkit-mask-image:radial-gradient(ellipse 70% 90% at 50% 0%,#000,transparent 72%);
   mask-image:radial-gradient(ellipse 70% 90% at 50% 0%,#000,transparent 72%);
@@ -412,7 +416,7 @@ section{padding:120px 0;position:relative}
 footer{
   border-top:1px solid var(--border);
   padding:52px 0 40px;
-  background:rgba(255,255,255,.012);
+  background:rgba(212,175,55,.012);
 }
 .foot-inner{
   display:flex;flex-wrap:wrap;gap:28px;
@@ -421,7 +425,7 @@ footer{
 .foot-links{display:flex;flex-wrap:wrap;gap:28px}
 .foot-links a{font-size:.87rem;color:var(--muted);transition:color .3s}
 .foot-links a:hover{color:var(--text)}
-.copy{font-size:.8rem;color:#5b6377}
+.copy{font-size:.8rem;color:#5b5548}
 
 /* ============ REVEAL ============ */
 .reveal{
@@ -467,8 +471,19 @@ footer{
 <!-- ================= NAV ================= -->
 <header class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#" class="logo">
-      <span class="logo-mark">S</span>
+    <a href="#" class="logo" aria-label="SCORE LLC">
+      <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true">
+        <defs>
+          <linearGradient id="logoGoldNav" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#F7E9B0"/>
+            <stop offset="0.45" stop-color="#D4AF37"/>
+            <stop offset="1" stop-color="#A67C00"/>
+          </linearGradient>
+        </defs>
+        <circle cx="32" cy="32" r="24" fill="none" stroke="url(#logoGoldNav)" stroke-width="5"/>
+        <circle cx="32" cy="32" r="13" fill="none" stroke="url(#logoGoldNav)" stroke-width="3.5"/>
+        <path d="M32 22 L34.5 29.5 L42 32 L34.5 34.5 L32 42 L29.5 34.5 L22 32 L29.5 29.5 Z" fill="url(#logoGoldNav)"/>
+      </svg>
       <span class="logo-text">SCORE<span>LLC</span></span>
     </a>
     <nav class="nav-links">
@@ -556,8 +571,8 @@ footer{
     <div class="bento">
 
       <!-- 1 — Social (span2) -->
-      <article class="card span2 g-cyan reveal">
-        <div class="icon i-cyan">
+      <article class="card span2 reveal">
+        <div class="icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5h-5"/>
           </svg>
@@ -577,8 +592,8 @@ footer{
       </article>
 
       <!-- 2 — Content -->
-      <article class="card g-pink reveal" style="--d:.06s">
-        <div class="icon i-pink">
+      <article class="card reveal" style="--d:.06s">
+        <div class="icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/>
             <path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/>
@@ -592,8 +607,8 @@ footer{
       </article>
 
       <!-- 3 — Adobe -->
-      <article class="card g-violet reveal">
-        <div class="icon i-violet">
+      <article class="card reveal">
+        <div class="icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/>
           </svg>
@@ -606,8 +621,8 @@ footer{
       </article>
 
       <!-- 4 — Video -->
-      <article class="card g-amber reveal" style="--d:.06s">
-        <div class="icon i-amber">
+      <article class="card reveal" style="--d:.06s">
+        <div class="icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="4.5" width="20" height="15" rx="3"/>
             <path d="M10 9.5l5 2.5-5 2.5z"/>
@@ -621,8 +636,8 @@ footer{
       </article>
 
       <!-- 5 — Web & App -->
-      <article class="card g-blue reveal" style="--d:.12s">
-        <div class="icon i-blue">
+      <article class="card reveal" style="--d:.12s">
+        <div class="icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
             <path d="M8 6l-5 6 5 6"/><path d="M16 6l5 6-5 6"/><path d="M13.5 4.5l-3 15"/>
           </svg>
@@ -635,8 +650,8 @@ footer{
       </article>
 
       <!-- 6 — Data & Tools -->
-      <article class="card g-green reveal">
-        <div class="icon i-green">
+      <article class="card reveal">
+        <div class="icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 20V12"/><path d="M12 20V4"/><path d="M19 20v-6"/>
           </svg>
@@ -648,9 +663,9 @@ footer{
         </p>
       </article>
 
-      <!-- 7 — IT Support (NEW) -->
-      <article class="card g-teal reveal" style="--d:.06s">
-        <div class="icon i-teal">
+      <!-- 7 — IT Support -->
+      <article class="card reveal" style="--d:.06s">
+        <div class="icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="4" width="18" height="6" rx="2"/>
             <rect x="3" y="14" width="18" height="6" rx="2"/>
@@ -671,8 +686,8 @@ footer{
       </article>
 
       <!-- 8 — AI -->
-      <article class="card g-violet reveal" style="--d:.12s">
-        <div class="icon i-violet">
+      <article class="card reveal" style="--d:.12s">
+        <div class="icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
             <rect x="7.5" y="7.5" width="9" height="9" rx="2.5"/>
             <path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.2 5.2l2.1 2.1M16.7 16.7l2.1 2.1M18.8 5.2l-2.1 2.1M7.3 16.7l-2.1 2.1"/>
@@ -752,8 +767,19 @@ footer{
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="container foot-inner">
-    <a href="#" class="logo">
-      <span class="logo-mark">S</span>
+    <a href="#" class="logo" aria-label="SCORE LLC">
+      <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true">
+        <defs>
+          <linearGradient id="logoGoldFoot" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#F7E9B0"/>
+            <stop offset="0.45" stop-color="#D4AF37"/>
+            <stop offset="1" stop-color="#A67C00"/>
+          </linearGradient>
+        </defs>
+        <circle cx="32" cy="32" r="24" fill="none" stroke="url(#logoGoldFoot)" stroke-width="5"/>
+        <circle cx="32" cy="32" r="13" fill="none" stroke="url(#logoGoldFoot)" stroke-width="3.5"/>
+        <path d="M32 22 L34.5 29.5 L42 32 L34.5 34.5 L32 42 L29.5 34.5 L22 32 L29.5 29.5 Z" fill="url(#logoGoldFoot)"/>
+      </svg>
       <span class="logo-text">SCORE<span>LLC</span></span>
     </a>
     <nav class="foot-links">
